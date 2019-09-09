@@ -1,7 +1,3 @@
-from pyquery import PyQuery as pq
-import requests
-
-html = '''
 <div id="container">
     <ul class="list">
          <li class="item-0">first item</li>
@@ -11,20 +7,3 @@ html = '''
          <li class="item-0"><a href="link5.html">fifth item</a></li>
      </ul>
  </div>
-'''
-doc = pq(html)
-print(doc('li'))
-
-
-doc = pq(url='http://www.segmentfault.com')
-print(doc('title'))
-
-
-doc=pq(requests.get('http://www.segmentfault.com').text)
-print(doc('title'))
-
-doc=pq(filename='30-1.html')
-print(doc('li'))
-
-print(doc('#container .list li'))
-print(type(doc('#container .list li')))
